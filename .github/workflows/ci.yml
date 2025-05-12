@@ -20,8 +20,7 @@ jobs:
 
     - name: Build the Docker image
       run: docker push yuriydobboz/ci-cd-aws-docker .
-    - name: Push to Dockerhub
-      run: docker push yuriydobboz/ci-cd-aws-docker .
+
     - name: Push to Dockerhub
       run: docker push yuriydobboz/ci-cd-aws-docker:latest
 
