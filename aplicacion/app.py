@@ -74,6 +74,7 @@ def registro():
         form.username.errors.append("Nombre de usuario ya existe.")
     return render_template("usuarios_new.html", form=form)
 
+
 @app.route('/perfil/<username>', methods=["get", "post"])
 @login_required
 def perfil(username):
