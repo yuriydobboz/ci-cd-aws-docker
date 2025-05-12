@@ -14,8 +14,6 @@ app.config.from_object(config)
 
 #app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URL")
 
-
-
 Bootstrap(app)
 db = SQLAlchemy(app)
 #Importamos los modelos una vez existe una instancia de app y otra instancia de db,
