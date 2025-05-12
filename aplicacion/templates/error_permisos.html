@@ -1,8 +1,0 @@
-{% extends "baseFin.html" %}
-{% block title %}Error de Permisos{% endblock %}
-{% block content %}
-    <h1>Error de Permisos</h1>
-    <p>El usuario <strong>{{ usuario }}</strong> no tiene los permisos necesarios para realizar esta acción.</p>
-    <p>Solo puede realizar compras</p>
-    <a href="{{ url_for('inicio') }}" class="btn btn-primary">Volver al inicio</a>
-{% endblock %}

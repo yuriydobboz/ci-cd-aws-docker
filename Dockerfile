@@ -1,17 +1,17 @@
-# Usa Python slim como base
+# Imagen base oficial de Python
 FROM python:3.11-slim
 
-# Define directorio de trabajo
+# Establece el directorio de trabajo en el contenedor
 WORKDIR /app
 
-# Copia requisitos y proyecto
-COPY requirements.txt .
+# Copia los archivos necesarios
+COPY requirements.txt requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . .
+COPY app.py app.py
 
-# Expón el puerto
+# Expone el puerto que Flask usará
 EXPOSE 5000
 
-# Comando de inicio
-CMD ["python", "manage.py"]
+# Comando por defecto para ejecutar la app
+CMD ["python", "app.py"]
