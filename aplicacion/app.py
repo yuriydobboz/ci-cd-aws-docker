@@ -11,6 +11,7 @@ from flask_login import LoginManager, login_user, logout_user, login_required, c
 app = Flask(__name__)
 app.config.from_object(config)
 
+#prueba
 
 #app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URL")
 
