@@ -1,0 +1,22 @@
+{% extends "baseFin.html" %}
+{% block title %}Añadir Tipo{% endblock %}
+{% block content %}
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h3 class="text-center mb-4">Nuevo Tipo</h3>
+      <form method="post" class="form">
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+          <label for="tipo" class="form-label">Tipo</label>
+          {{ form.tipo(class="form-control") }}
+        </div>
+        <div class="d-flex justify-content-between">
+          <button type="submit" class="btn btn-success">Guardar</button>
+          <a href="{{ url_for('tipos_new') }}" class="btn btn-secondary">Cancelar</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
