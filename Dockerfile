@@ -14,7 +14,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 5000
 
 # Comando para ejecutar la app (usando manage.py)
-CMD ["python","manage.py"]
+#CMD ["python","manage.py"]
+
+CMD ["flask", "run", "--host="]
 
 
 
