@@ -7,7 +7,7 @@ WORKDIR /app
 # Copia todo el contenido del proyecto a /app en el contenedor
 #COPY . .
 COPY manage.py /app
-COPY templates /app/templates
+COPY templates /aplicacion/templates
 
 
 # Instala las dependencias
