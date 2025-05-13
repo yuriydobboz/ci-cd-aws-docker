@@ -338,6 +338,4 @@ def bienvenido():
 def page_not_found(error):
     return render_template("error.html", error="Página no encontrada..."), 404
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
 
