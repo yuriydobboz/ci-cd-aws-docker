@@ -5,7 +5,10 @@ FROM python:3.10-slim
 WORKDIR /app
 
 # Copia todo el contenido del proyecto a /app en el contenedor
-COPY . .
+#COPY . .
+COPY manage.py /app
+COPY templates /app/templates
+
 
 # Instala las dependencias
 RUN pip install --no-cache-dir -r requirements.txt
