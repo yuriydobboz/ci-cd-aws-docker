@@ -8,7 +8,7 @@ from aplicacion.forms import formArticulo, FormCategoria,FormSINO, FormTipo,Form
     formBuscarDigi, formBuscarTipo, FormTipo, LoginForm, FormUsuario,FormChangePassword
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static')
 app.config.from_object(config)
 
 
