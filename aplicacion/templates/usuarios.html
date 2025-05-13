@@ -1,0 +1,37 @@
+{% extends "baseFin.html" %}
+{% block title %}Tienda de Videojuegos{% endblock %}
+{% block content %}
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <h3 class="text-center mb-4">Usuarios</h3>
+      
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Username</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Email</th>
+              <th scope="col">Privilegio Admin</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for usu in usuarios %}
+            <tr>
+              <td>{{ usu.username }}</td>
+              <td>{{ usu.nombre }}</td>
+              <td>{{ usu.email }}</td>
+              <td>{{ usu.admin }}</td>
+
+              <td class="d-flex justify-content-center">
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

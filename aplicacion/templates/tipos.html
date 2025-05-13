@@ -1,0 +1,41 @@
+{% extends "baseFin.html" %}
+{% block title %}Tienda de Videojuegos{% endblock %}
+{% block content %}
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <h3 class="text-center mb-4">Tipos</h3>
+      
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Nombre</th>
+              {% if current_user.is_authentificated and current_user.is_admin() %}
+              <th scope="col" class="text-center">Acciones</th>
+              {% endif %}
+            </tr>
+          </thead>
+          <tbody>
+            {% for tip in tipos %}
+            <tr>
+              <td>{{ tip.tipo }}</td>
+              {% if current_user.is_authenticated and current_user.is_admin()  %}
+              <td class="d-flex justify-content-center">
+                <a href="{{ url_for('tipo_edit', id=tip.id) }}" class="btn btn-sm btn-primary mx-1">
+                  Modificar <i class="fas fa-paint-brush"></i>
+                </a>
+                <a href="{{ url_for('tipo_delete', id=tip.id) }}" class="btn btn-sm btn-danger mx-1">
+                  Borrar <i class="fa fa-trash"></i>
+                </a>
+              {% endif %}
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

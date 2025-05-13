@@ -1,0 +1,71 @@
+{% extends "baseFin.html" %}
+{% block title %}Buscar Tipos{% endblock %}
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3>Búsqueda de Tipos</h3>
+
+      {% if busqueda %}
+        <div class="alert alert-dark">
+          La última búsqueda fue: "{{ textoBuscar }}" con el modo "{{ form.modo.data }}"
+        </div>
+      {% endif %}
+
+      <form action="{{ url_for('tipos_search') }}" method="post">
+        <div class="form-row">
+          <div class="col-md-6">
+            {{ form.tipo.label }} {{ form.tipo(class="form-control", placeholder="Buscar tipo...") }}
+          </div>
+          <div class="col-md-3">
+            {{ form.modo.label }} 
+            {{ form.modo(class="form-control") }}
+          </div>
+          <div class="col-md-3">
+            {{ form.submit(class="btn btn-primary btn-block") }}
+          </div>
+        </div>
+      </form>
+
+      <br />
+      <h3>Tipos Encontrados</h3>
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Nombre</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for tip in tipos %}
+              <tr>
+                <td>{{ tip.tipo }}</td>
+                {% if current_user.is_authenticated and current_user.is_admin() %}
+                  <td class="d-flex justify-content-center">
+                    <a href="{{ url_for('tipo_edit', id=tip.id) }}" class="btn btn-sm btn-primary mx-1">
+                      Modificar <i class="fas fa-paint-brush"></i>
+                    </a>
+                    <a href="{{ url_for('tipo_delete', id=tip.id) }}" class="btn btn-sm btn-danger mx-1">
+                      Borrar <i class="fa fa-trash"></i>
+                    </a>
+                  </td>
+                {% endif %}
+              </tr>
+            {% else %}
+              <tr>
+                <td colspan="3" class="text-center">No se encontraron tipos.</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+
+      {% if cantidad %}
+        <p><strong>Total de tipos encontrados: {{ cantidad }}</strong></p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}
