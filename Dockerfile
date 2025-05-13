@@ -16,7 +16,8 @@ EXPOSE 5000
 # Comando para ejecutar la app (usando manage.py)
 #CMD ["python","manage.py"]
 
-CMD ["flask", "run", "--host="]
+CMD ["flask", "run", "--host=0.0.0.0", "--port=5000"]
+
 
 
 
