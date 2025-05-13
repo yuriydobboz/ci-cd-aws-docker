@@ -2,7 +2,7 @@
 FROM python:3.11-slim
 
 # Define directorio de trabajo
-WORKDIR /app
+WORKDIR /aplicacion
 
 # Copia requisitos y proyecto
 COPY requirements.txt .
