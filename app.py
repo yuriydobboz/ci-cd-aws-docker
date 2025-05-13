@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return "¡Hola, mundo desde Flask!, cambio"
+    return "¡Hola, mundo desde Flask!, por la duda.. la mas"
 
 @app.route('/status')
 def status():
