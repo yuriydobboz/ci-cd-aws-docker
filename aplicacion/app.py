@@ -12,7 +12,6 @@ app = Flask(__name__)
 app.config.from_object(config)
 
 
-#app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URL")
 
 Bootstrap(app)
 db = SQLAlchemy(app)
